@@ -11,7 +11,9 @@ app.use(express.static("public"));
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use('/public/assets/img', express.static(__dirname + '/public/assets/img'));
+app.use('/public/assets/css', express.static(__dirname + '/public/assets/css'));
+app.use('/public', express.static(__dirname + '/public'));
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
