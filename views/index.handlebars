@@ -9,8 +9,9 @@
 
         {{#each burgers}}
         {{#unless devoured}}
-        <p>{{this.id}}. {{this.burger_name}} 
-            <button type="button" class="btn btn-success btn-sm change-devoured" data-id="{{this.id}}" data-devoured="{{devoured}}">
+        <p>{{this.id}}. {{this.burger_name}}
+            <button type="button" class="btn btn-success btn-sm change-devoured" data-id="{{this.id}}"
+                data-devoured="{{devoured}}">
                 Devour it!
             </button>
         </p>
@@ -32,8 +33,11 @@
 
 <div class="add-form">
     <form action="/" method="POST">
-        <textarea type="text" name="new-burger" id="newb"></textarea>
+        <div class="input-group-prepend">
+            <span class="input-group-text">Add a Burger!</span>
+        </div>
+        <textarea type="text" class="form-control p-3" aria-label="With textarea" name="new-burger" id="newb"></textarea>
 
-        <button type="submit">Submit</button>
+        <button id="subm" type="submit" class="btn btn-warning mt-3">Submit</button>
     </form>
 </div>
