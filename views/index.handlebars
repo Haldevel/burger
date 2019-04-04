@@ -6,30 +6,26 @@
 
 <div class="flex-container">
     <div class="not-dev">
-        <ul>
-            {{#each burgers}}
-            {{#unless devoured}}
-            <li>
-                <p>{{this.id}} {{this.burger_name}} {{this.devoured}}
-                    <button class="change-devoured" data-id="{{this.id}}" data-devoured="{{devoured}}">
-                        Devour it!
-                    </button>
-                </p>
-            </li>
-            {{/unless}}
-            {{/each}}
-        </ul>
+
+        {{#each burgers}}
+        {{#unless devoured}}
+        <p>{{this.id}}. {{this.burger_name}} 
+            <button class="change-devoured" data-id="{{this.id}}" data-devoured="{{devoured}}">
+                Devour it!
+            </button>
+        </p>
+        {{/unless}}
+        {{/each}}
+
     </div>
     <div class="dev">
-        <ul>
-            {{#each burgers}}
-            {{#if devoured}}
-            <li>
-                <p>{{this.id}} {{this.burger_name}}</p>
-            </li>
-            {{/if}}
-            {{/each}}
-        </ul>
+
+        {{#each burgers}}
+        {{#if devoured}}
+        <p>{{this.id}}. {{this.burger_name}}</p>
+        {{/if}}
+        {{/each}}
+
     </div>
 </div>
 
