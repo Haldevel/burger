@@ -1,0 +1,39 @@
+<h1>Eat-Da-Burger!</h1>
+
+<img src="../public/assets/img/burger_s.jpg" />
+
+<div class="flex-container">
+    <div class="not-dev">
+        <ul>
+            {{#each burgers}}
+            <li>
+                <p>ID: {{this.id}}</p>
+                <p>Burger: {{this.burger_name}}</p>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="dev">
+
+    </div>
+</div>
+
+
+{{!-- <ul>
+    {{#each wishes}}
+    <li>
+        <p>ID: {{this.id}}</p>
+        <p>Wish: {{this.burger_name}}</p>
+    </li>
+    {{/each}}
+</ul> --}}
+
+{{!-- <div>
+    <form action="/" method="POST">
+        <textarea type="text" name="wish"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div> --}}
+
+
