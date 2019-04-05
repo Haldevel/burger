@@ -1,44 +1,36 @@
-# burger
+# Burger app
 ### by Halina Z
 
 #### Description
 _________________________________________________________________
 
-This full-stack application finds three top mathing small breeds of dogs based on a user's answers to five survey questions. 
-The app displays the breeds and the images of these best matching small breeds. The app uses Express to handle routing.
+This full-stack application displays the burgers  stored in MySql db with  **Devour** buttons for each burger which allow to move the corresponding burger to another part of the screen. The app lets users input the names of burgers they'd like to eat. 
+
 
 _________________________________________________________________
 
-#### Home page: 
+#### Index page: 
 
 
-The home page has a "Go to Survey" button to open a survey page, and also has a link to the small breeds api which displays a JSON of nine small breeds of dogs.
+When the app is loaded, the burgers are sorted into two columns: the burgers already devoured on the right, and the burgers not devoured yet on the left.
 
 ![Index Page](./public/assets/img/burger_1.png)
 
 _________________________________________________________________
 
-#### Survey page: 
+#### Add a Burger: 
 
-The survey page contains a form with five basic questions about a user personality traits. After the questions are answered and the button "Submit" is clicked, the top three matches are displayed in the modal dialog. 
+The app allows a user to add a burger by entering its name into the text area.
 
-![Devour a burger](./public/assets/img/burger_2.png)
-
-_________________________________________________________________
-
-#### Results: 
-
-The top three matches of small breeds are displayed in the modal:
-
-![Add a new burger](./public/assets/img/burger_3.png)
+![Devour a burger](./public/assets/img/burger_3.png)
 
 _________________________________________________________________
 
-#### Results: 
+#### The Burger is added: 
 
-The top three matches of small breeds are displayed in the modal:
+When a user clicks **Submit** button, the corresponding burger is added to the left column with the **Devour** button ready to be clicked:
 
-![A new burger is added](./public/assets/img/burger_4.png)
+![Add a new burger](./public/assets/img/burger_4.png)
 
 _________________________________________________________________
 
