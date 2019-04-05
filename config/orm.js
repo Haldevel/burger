@@ -2,10 +2,8 @@
 var connection = require("../config/connection.js");
 
 // Helper function for SQL syntax.
-// Let's say we want to pass 3 values into the mySQL query.
-// In order to write the query, we need 3 question marks.
-// The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
-// ["?", "?", "?"].toString() => "?,?,?";
+// The above helper function loops through an array of values we pass, 
+//creates an array of question marks - ["?", "?", "?"], and turns it into a string.
 function printQuestionMarks(num) {
     var arr = [];
 
@@ -25,12 +23,10 @@ function objToSql(ob) {
         var value = ob[key];
         // check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
-            // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+            // if string with spaces, add quotations
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
-            // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-            // e.g. {sleepy: true} => ["sleepy=true"]
             arr.push(key + "=" + value);
         }
     }
@@ -39,9 +35,9 @@ function objToSql(ob) {
     return arr.toString();
 }
 
-// Object for all our SQL statement functions.
+//We create out orm object for all our SQL statement functions
 var orm = {
-    selectAll: function (tableInput, cb) {
+    selectAll: function (tableInput, cb) { //function to sellect all burgers
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
@@ -50,7 +46,7 @@ var orm = {
             cb(result);
         });
     },
-    insertOne: function (table, cols, vals, cb) {
+    insertOne: function (table, cols, vals, cb) { //function to insert a burger
         var queryString = "INSERT INTO " + table;
 
         queryString += " (";
@@ -70,7 +66,7 @@ var orm = {
             cb(result);
         });
     },
-    // An example of objColVals would be {name: panther, sleepy: true}
+    //function to update a burger in the burgers table
     updateOne: function (table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
         queryString += " SET ";
