@@ -6,7 +6,6 @@
 
 <div class="flex-container">
     <div class="not-dev">
-
         {{#each burgers}}
         {{#unless devoured}}
         <p>{{this.id}}. {{this.burger_name}}
@@ -17,27 +16,24 @@
         </p>
         {{/unless}}
         {{/each}}
-
     </div>
     <div class="dev">
-
         {{#each burgers}}
         {{#if devoured}}
         <p>{{this.id}}. {{this.burger_name}}</p>
         {{/if}}
         {{/each}}
-
     </div>
 </div>
 
 
 <div class="add-form">
     <form action="/" method="POST">
-        <div class="input-group-prepend">
-            <span class="input-group-text">Add a Burger!</span>
+        <label for="newb">Add a Burger:</label>
+        <textarea type="text" class="form-control p-3" aria-label="With textarea" name="new-burger"
+            id="newb"></textarea>
+        <div class="text-center">
+            <button id="subm" type="submit" class="btn btn-warning btn-sm mt-3 text-center">Submit</button>
         </div>
-        <textarea type="text" class="form-control p-3" aria-label="With textarea" name="new-burger" id="newb"></textarea>
-
-        <button id="subm" type="submit" class="btn btn-warning mt-3">Submit</button>
     </form>
 </div>
